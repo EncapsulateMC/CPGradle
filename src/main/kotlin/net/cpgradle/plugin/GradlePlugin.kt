@@ -2,6 +2,7 @@ package net.cpgradle.plugin
 
 import net.cpgradle.ext.PluginExtension
 import net.cpgradle.log.SignatureBuilder
+import net.cpgradle.tasks.ApplySpecialSourceTask
 import net.cpgradle.tasks.CheckDestinationTask
 import net.cpgradle.tasks.DownloadMappingTask
 import net.cpgradle.tasks.DownloadTargetJarTask
@@ -35,5 +36,6 @@ open class GradlePlugin : Plugin<Project> {
         project?.tasks?.create("checkDest", CheckDestinationTask::class.java)
         project?.tasks?.create("downloadJar", DownloadTargetJarTask::class.java)
         project?.tasks?.create("downloadMappings", DownloadMappingTask::class.java)
+        project?.tasks?.create("applySpecialSource", ApplySpecialSourceTask::class.java)
     }
 }

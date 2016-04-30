@@ -13,6 +13,10 @@ import java.io.File
  * @author PizzaCrust
  */
 open class DownloadMappingTask : DefaultTask() {
+    companion object StaticFields {
+        val outFile: File = File(CheckDestinationTask.destination, "jar.srg")
+    }
+
     init {
         this.group = "coderpack"
         this.dependsOn("downloadJar")

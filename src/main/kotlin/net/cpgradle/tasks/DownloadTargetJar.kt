@@ -1,5 +1,6 @@
 package net.cpgradle.tasks
 
+import net.cpgradle.ext.Downloader
 import net.cpgradle.ext.PluginExtension
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
@@ -23,10 +24,7 @@ class DownloadTargetJar : DefaultTask() {
 
     @TaskAction fun doTask() {
         val ext: PluginExtension = project.extensions.getByType(PluginExtension::class.java)
-        val theURL: URL = URL(ext.mappingLink)
-        val rbc: ReadableByteChannel = Channels.newChannel(theURL.openStream())
         val outputFile: java.io.File = File(CheckDestinationTask.destination, "target.jar")
-        val outputStream: FileOutputStream = FileOutputStream(outputFile)
-        outputStream.channel.transferFrom(rbc, 0, Long.MAX_VALUE)
+        Downloader(outputFile, ext.targetJarLink)
     }
 }

@@ -19,8 +19,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="CPGradle_main" target="1.5" />
-      <module name="CPGradle_test" target="1.5" />
+      <module name="CPGradle_main" target="1.7" />
+      <module name="CPGradle_test" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

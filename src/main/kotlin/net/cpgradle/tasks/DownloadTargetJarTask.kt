@@ -25,6 +25,6 @@ open class DownloadTargetJarTask : DefaultTask() {
     @TaskAction fun doTask() {
         val ext: PluginExtension = project.extensions.getByType(PluginExtension::class.java)
         val outputFile: java.io.File = File(CheckDestinationTask.destination, "target.jar")
-        Downloader(outputFile, ext.targetJarLink!!)
+        Downloader(outputFile, ext.targetJar!!)
     }
 }

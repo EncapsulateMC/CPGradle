@@ -7,11 +7,13 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.0.1"
+        classpath files('build/libs/CPGradle-1.0-SNAPSHOT.jar')
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
+apply plugin: 'cpgradle'
 
 repositories {
     mavenCentral()
@@ -27,6 +29,13 @@ jar {
             it.isDirectory() ? it : zipTree(it)
         }
     }
+}
+
+// Plugin testing using Minecraft MCP's SRG mappings
+coderpack {
+    mapping = 'https://raw.githubusercontent.com/ProjectTestificate/MinecraftMappings/master/1.9/obf2srg.srg'
+    targetJar = 'https://launcher.mojang.com/mc/game/1.9/client/2f67dfe8953299440d1902f9124f0f2c3a2c940f/client.jar'
+    jarName = 'Searge-Minecraft.jar'
 }
 
 dependencies {

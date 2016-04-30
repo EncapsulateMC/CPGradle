@@ -7,7 +7,7 @@ package net.cpgradle.ext
  * @author PizzaCrust
  */
 open class PluginExtension {
-    var mappingLink: String? = null
-    var targetJarLink: String? = null
+    var mapping: String? = null
+    var targetJar: String? = null
     var jarName: String? = null
 }

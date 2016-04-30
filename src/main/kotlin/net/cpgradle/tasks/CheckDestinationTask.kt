@@ -15,6 +15,10 @@ class CheckDestinationTask : DefaultTask() {
         val destination: java.io.File = File(System.getProperty("user.dir"), "libs")
     }
 
+    init {
+        this.group = "coderpack"
+    }
+
     @TaskAction fun doTask() {
         if (!CheckDestinationTask.destination.exists()) {
             CheckDestinationTask.destination.mkdir()

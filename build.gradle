@@ -20,4 +20,5 @@ repositories {
 dependencies {
     compile gradleApi()
     compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.1"
+    compile 'net.md-5:SpecialSource:1.7.3'
 }

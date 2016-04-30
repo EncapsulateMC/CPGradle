@@ -29,7 +29,7 @@ class GradlePlugin : Plugin<Project> {
                     .subSpaces(4)
                     .log()
         }
-        project?.extensions?.add("cpg", PluginExtension::class.java)
+        project?.extensions?.add("coderpack", PluginExtension::class.java)
         project?.tasks?.create("checkDest", CheckDestinationTask::class.java)
     }
 }

@@ -32,10 +32,18 @@ jar {
 }
 
 // Plugin testing using Minecraft MCP's SRG mappings
+/* Client
+    coderpack {
+        mapping = 'https://raw.githubusercontent.com/ProjectTestificate/MinecraftMappings/master/1.9/obf2srg.srg'
+        targetJar = 'https://launcher.mojang.com/mc/game/1.9/client/2f67dfe8953299440d1902f9124f0f2c3a2c940f/client.jar'
+        jarName = 'Searge-Minecraft.jar'
+    }
+*/
+// Server
 coderpack {
-    mapping = 'https://raw.githubusercontent.com/ProjectTestificate/MinecraftMappings/master/1.9/obf2srg.srg'
-    targetJar = 'https://launcher.mojang.com/mc/game/1.9/client/2f67dfe8953299440d1902f9124f0f2c3a2c940f/client.jar'
-    jarName = 'Searge-Minecraft.jar'
+    mapping = 'https://raw.githubusercontent.com/ProjectTestificate/MinecraftMappings/master/1.9/obf2mcp.srg'
+    targetJar = 'https://launcher.mojang.com/mc/game/1.9/server/b4d449cf2918e0f3bd8aa18954b916a4d1880f0d/server.jar'
+    jarName = 'MCP-MinecraftServer.jar'
 }
 
 dependencies {

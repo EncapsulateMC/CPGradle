@@ -1,5 +1,6 @@
 package net.cpgradle.plugin
 
+import net.cpgradle.ext.PluginExtension
 import net.cpgradle.log.SignatureBuilder
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -27,5 +28,6 @@ class GradlePlugin : Plugin<Project> {
                     .subSpaces(4)
                     .log()
         }
+        project?.extensions?.add("cpg", PluginExtension::class.java)
     }
 }

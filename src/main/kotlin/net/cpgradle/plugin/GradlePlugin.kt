@@ -3,6 +3,7 @@ package net.cpgradle.plugin
 import net.cpgradle.ext.PluginExtension
 import net.cpgradle.log.SignatureBuilder
 import net.cpgradle.tasks.CheckDestinationTask
+import net.cpgradle.tasks.DownloadMappingTask
 import net.cpgradle.tasks.DownloadTargetJarTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -33,5 +34,6 @@ class GradlePlugin : Plugin<Project> {
         project?.extensions?.add("coderpack", PluginExtension::class.java)
         project?.tasks?.create("checkDest", CheckDestinationTask::class.java)
         project?.tasks?.create("downloadJar", DownloadTargetJarTask::class.java)
+        project?.tasks?.create("downloadMappings", DownloadMappingTask::class.java)
     }
 }

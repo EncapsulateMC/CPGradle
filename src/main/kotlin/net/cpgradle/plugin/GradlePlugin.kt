@@ -14,7 +14,7 @@ import org.gradle.api.Project
  * @since 1.0-SNAPSHOT
  * @author PizzaCrust
  */
-class GradlePlugin : Plugin<Project> {
+open class GradlePlugin : Plugin<Project> {
     override fun apply(project: Project?) {
         project?.afterEvaluate {
             // "#################################################"

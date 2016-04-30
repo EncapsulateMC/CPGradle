@@ -12,7 +12,7 @@ import java.nio.channels.ReadableByteChannel
  * @subce 1.0-SNAPSHOT
  * @author PizzaCrust
  */
-class Downloader(outputFile: File, url: String) {
+open class Downloader(outputFile: File, url: String) {
     init {
         val theURL: URL = URL(url)
         val rbc: ReadableByteChannel = Channels.newChannel(theURL.openStream())

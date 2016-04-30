@@ -11,7 +11,7 @@ import java.io.FileNotFoundException
  * @since 1.0-SNAPSHOT
  * @author PizzaCrust
  */
-class CheckDestinationTask : DefaultTask() {
+open class CheckDestinationTask : DefaultTask() {
     companion object StaticFields {
         val destination: java.io.File = File(System.getProperty("user.dir"), "libs")
     }

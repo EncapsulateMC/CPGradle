@@ -12,7 +12,7 @@ import java.io.File
  * @since 1.0-SNAPSHOT
  * @author PizzaCrust
  */
-class DownloadMappingTask : DefaultTask() {
+open class DownloadMappingTask : DefaultTask() {
     init {
         this.group = "coderpack"
         this.dependsOn("downloadJar")
@@ -21,6 +21,6 @@ class DownloadMappingTask : DefaultTask() {
     @TaskAction fun doTask() {
         val ext: PluginExtension = project.extensions.getByType(PluginExtension::class.java)
         val outputFile: java.io.File = File(CheckDestinationTask.destination, "jar.srg")
-        Downloader(outputFile, ext.mappingLink)
+        Downloader(outputFile, ext.mappingLink!!)
     }
 }

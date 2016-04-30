@@ -6,7 +6,7 @@ package net.cpgradle.log
  * @since 1.0-SNAPSHOT
  * @author PizzaCrust
  */
-class SignatureBuilder {
+open class SignatureBuilder {
 
     /**
      * Testing module.

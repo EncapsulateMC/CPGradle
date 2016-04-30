@@ -17,8 +17,23 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    shade
+}
+
+jar {
+    from {
+        configurations.shade.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+
 dependencies {
     compile gradleApi()
     compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.1"
     compile 'net.md-5:SpecialSource:1.7.3'
+
+    shade "org.jetbrains.kotlin:kotlin-stdlib:1.0.1"
+    shade 'net.md-5:SpecialSource:1.7.3'
 }

@@ -12,7 +12,7 @@ import java.io.File
  * @since 1.0-SNAPSHOT
  * @author PizzaCrust
  */
-class DownloadTargetJarTask : DefaultTask() {
+open class DownloadTargetJarTask : DefaultTask() {
     init {
         this.group = "coderpack"
         this.dependsOn("checkDest")
@@ -21,6 +21,6 @@ class DownloadTargetJarTask : DefaultTask() {
     @TaskAction fun doTask() {
         val ext: PluginExtension = project.extensions.getByType(PluginExtension::class.java)
         val outputFile: java.io.File = File(CheckDestinationTask.destination, "target.jar")
-        Downloader(outputFile, ext.targetJarLink)
+        Downloader(outputFile, ext.targetJarLink!!)
     }
 }
